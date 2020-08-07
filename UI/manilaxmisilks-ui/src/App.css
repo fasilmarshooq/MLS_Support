@@ -7,32 +7,28 @@
   pointer-events: none;
 }
 
-.bg-orders {
-  width: 100%;
-  min-height: 100vh;
-
-  justify-content: center;
-  align-items: center;
-  padding: 15px;
-
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  position: relative;
-  z-index: 1;
-}
-
 .card-header-sticky {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
 }
 
+.bg-orders {
+  background-color: #323232;
+  min-height: 100%;
+}
+
 .card-style {
-  width: 900px;
-  position: absolute;
-  left: 300px;
+  width: 100%;
+  height: auto;
   top: 10px;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .display-flex {

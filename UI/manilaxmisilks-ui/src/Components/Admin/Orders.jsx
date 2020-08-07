@@ -83,14 +83,9 @@ class Orders extends Component {
     return (
       <React.Fragment>
         <div>
-          <div
-            className=" bg-orders"
-            style={{
-              backgroundImage: "url('assets/ordersSelfHelp/images/bg-01.jpg')",
-            }}
-          >
-            <div className="card  bg-light  card-style">
-              <h6 className="card-header  card-header-sticky">
+          <div className="container ">
+            <div className="card border-secondary mb-5 card-style">
+              <div className="card-header  card-header-sticky">
                 <div className="input-group ">
                   <input
                     type="text"
@@ -108,7 +103,7 @@ class Orders extends Component {
                     <i className="fa fa-plus ml-2" aria-hidden="true"></i>
                   </button>
                 </div>
-              </h6>
+              </div>
               <OrdersTable
                 Orders={data}
                 OnEdit={this.handleEdit}
