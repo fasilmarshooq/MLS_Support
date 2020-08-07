@@ -1,4 +1,4 @@
-﻿namespace devtools_api.Models
+﻿namespace manilaxmisilks_api.Models
 {
     public class CourierModel
     {

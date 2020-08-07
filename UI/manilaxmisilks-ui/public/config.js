@@ -1,1 +1,1 @@
-var apiEndPoint = "http://mlsacc-001-site1.etempurl.com/webapi/";
+var apiEndPoint = "http://mlsacc-001-site1.etempurl.com/WebAPI/";

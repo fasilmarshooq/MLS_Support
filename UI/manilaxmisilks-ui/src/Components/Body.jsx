@@ -12,10 +12,10 @@ class Body extends Component {
       <React.Fragment>
         <main>
           <Switch>
-            <Route path="/Admin" component={AdminLogin} />
-            <Route path="/Orders" component={Orders} />
-            <Route path="/Main" component={Main} />
-            <Route path="/not-found" component={NotFound} />
+            <Route exact path="/Admin" component={AdminLogin} />
+            <Route exact path="/Orders" component={Orders} />
+            <Route exact path="/Main" component={Main} />
+            <Route exact path="/not-found" component={NotFound} />
             <Redirect from="/" exact to="/Main" />
             <Redirect to="/not-found" />
           </Switch>

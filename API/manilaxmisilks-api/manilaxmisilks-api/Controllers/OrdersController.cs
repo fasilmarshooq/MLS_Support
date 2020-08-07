@@ -1,4 +1,4 @@
-﻿using devtools_api.Services;
+﻿using manilaxmisilks_api.Services;
 using Newtonsoft.Json;
 using System;
 using System.Net;
@@ -7,7 +7,7 @@ using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Cors;
 
-namespace devtools_api.Controllers
+namespace manilaxmisilks_api.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]
 

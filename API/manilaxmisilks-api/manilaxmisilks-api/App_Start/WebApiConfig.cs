@@ -1,11 +1,11 @@
-﻿using devtools_api.Services;
+﻿using manilaxmisilks_api.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Cors;
 
-namespace devtools_api
+namespace manilaxmisilks_api
 {
     public static class WebApiConfig
     {

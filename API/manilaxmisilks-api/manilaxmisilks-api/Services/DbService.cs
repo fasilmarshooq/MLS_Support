@@ -1,9 +1,9 @@
 ﻿using System.Configuration;
-using devtools_api.Models;
+using manilaxmisilks_api.Models;
 using System.Collections.Generic;
 using MySql.Data.MySqlClient;
 
-namespace devtools_api.Services
+namespace manilaxmisilks_api.Services
 {
     public class DbService
     {
