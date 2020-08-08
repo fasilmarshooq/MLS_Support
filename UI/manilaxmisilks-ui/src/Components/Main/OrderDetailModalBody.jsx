@@ -9,7 +9,7 @@ const OrderDetailModalBody = ({ data }) => {
       </p>
     );
   return (
-    <div class="container">
+    <div>
       <article class="card">
         <div class="card-body">
           <h6>Order # {data[0].OrderNumber}</h6>
