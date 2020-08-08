@@ -18,8 +18,3 @@ primary key(Id),
 FOREIGN KEY (CourierId) REFERENCES Couriers(Id)
 );
 
-Insert into Couriers (Courier,CourierUrl) values ('ST','https://demo.com');
-Insert into Couriers (Courier,CourierUrl) values ('DTDC','https://demo.com');
-Insert into Couriers (Courier,CourierUrl) values ('Professional','https://demo.com');
-
-Insert into Orders (OrderNumber,TrackingNumber,CourierId,createdtime) values ('B67786','CBE8837373',1,current_timestamp());
