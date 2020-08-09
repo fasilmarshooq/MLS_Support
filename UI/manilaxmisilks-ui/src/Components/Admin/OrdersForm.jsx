@@ -2,6 +2,7 @@ import React from "react";
 import Form from "../Common/Form";
 import Joi from "joi-browser";
 import { PostOrder, GetCouriers } from "../../Services/ordersService";
+import { toast } from "react-toastify";
 
 class OrdersForm extends Form {
   state = {
@@ -36,15 +37,21 @@ class OrdersForm extends Form {
   }
 
   doSubmit = async () => {
-    const data = this.state.data;
+    try {
+      const data = this.state.data;
+      await PostOrder(
+        this.state.currentId,
+        data.OrderNumber,
+        data.TrackingNumber,
+        data.Courier
+      );
 
-    await PostOrder(
-      this.state.currentId,
-      data.OrderNumber,
-      data.TrackingNumber,
-      data.Courier
-    );
-    this.props.HandleClose();
+      this.props.HandleClose();
+    } catch (ex) {
+      if (ex.response && ex.response.status === 400) {
+        toast(ex.response.data);
+      }
+    }
   };
 
   schema = {

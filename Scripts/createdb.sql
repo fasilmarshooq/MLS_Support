@@ -10,7 +10,7 @@ primary key(Id)
 
 create table orders (
 Id int not null auto_increment,
-OrderNumber nvarchar(50) not null,
+OrderNumber nvarchar(50) not null Unique,
 TrackingNumber nvarchar(50)  null,
 CourierId int  null,
 createdtime datetime not null,

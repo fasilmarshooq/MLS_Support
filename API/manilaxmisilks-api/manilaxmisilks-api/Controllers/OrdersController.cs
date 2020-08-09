@@ -75,7 +75,15 @@ namespace manilaxmisilks_api.Controllers
                
             }
             catch (Exception ex)
+
             {
+                if (ex.Message.Contains("Duplicate"))
+                {
+                    return new HttpResponseMessage(HttpStatusCode.BadRequest)
+                    {
+                        Content = new StringContent("Duplicate Order # is not allowed.")
+                    };
+                }
                 return new HttpResponseMessage(HttpStatusCode.BadRequest)
                 {
                     Content = new StringContent(ex.StackTrace)
@@ -110,7 +118,7 @@ namespace manilaxmisilks_api.Controllers
 
 
         }
-
+        
 
     }
 }

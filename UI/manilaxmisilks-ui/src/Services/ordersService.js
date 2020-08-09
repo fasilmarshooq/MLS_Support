@@ -21,10 +21,10 @@ export async function GetOrder(orderNumber) {
   }
 }
 
-export async function PostOrder(id, orderNumber, tracckingNumber, courier) {
+export function PostOrder(id, orderNumber, tracckingNumber, courier) {
   try {
     const endPoint = `${apiEndPoint}?Id=${id}&orderNumber=${orderNumber}&trackingNumber=${tracckingNumber}&courier=${courier}`;
-    return await http.post(endPoint);
+    return http.post(endPoint);
   } catch (error) {
     return {};
   }
