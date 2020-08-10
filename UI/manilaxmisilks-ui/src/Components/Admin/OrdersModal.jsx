@@ -5,14 +5,20 @@ import OrdersForm from "./OrdersForm";
 class OrdersModal extends Component {
   state = {};
   render() {
-    const { showModal, handleModalClose, data } = this.props;
+    const { showModal, handleModalClose, data, couriers } = this.props;
     return (
       <React.Fragment>
         <PopUpModal
           show={showModal}
           onHide={handleModalClose}
           modalHeader="Order"
-          modalBody={<OrdersForm HandleClose={handleModalClose} data={data} />}
+          modalBody={
+            <OrdersForm
+              HandleClose={handleModalClose}
+              data={data}
+              couriers={couriers}
+            />
+          }
         />
       </React.Fragment>
     );

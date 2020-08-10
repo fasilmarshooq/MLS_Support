@@ -1,7 +1,7 @@
 import React from "react";
 import Form from "../Common/Form";
 import Joi from "joi-browser";
-import { PostOrder, GetCouriers } from "../../Services/ordersService";
+import { PostOrder } from "../../Services/ordersService";
 import { toast } from "react-toastify";
 
 class OrdersForm extends Form {
@@ -14,20 +14,17 @@ class OrdersForm extends Form {
     Couriers: [],
     errors: {},
     currentId: 0,
+    bingo: [],
   };
 
   componentDidMount() {
-    this.updateCouriers();
-    this.updateFormForEdit();
+    this.initializeForm();
   }
 
-  async updateCouriers() {
-    const Couriers = await GetCouriers();
-    this.setState({ Couriers });
-  }
-
-  updateFormForEdit() {
+  initializeForm() {
     const propsData = this.props.data;
+    const Couriers = this.props.couriers;
+    this.setState({ Couriers });
     if (!propsData) return;
     const data = this.state.data;
     data.Courier = propsData.Courier;

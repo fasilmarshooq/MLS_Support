@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { GetOrders } from "./../../Services/ordersService";
+import { GetOrders, GetCouriers } from "./../../Services/ordersService";
 import { paginate } from "../../Utils/Paginate";
 import Pagination from "../Common/Pagination";
 import OrdersTable from "./OrdersTable";
@@ -7,7 +7,6 @@ import _ from "lodash";
 import OrdersModal from "./OrdersModal";
 import { validateAuth } from "../../Services/adminLoginService";
 import { Redirect } from "react-router-dom";
-import { toast } from "react-toastify";
 
 class Orders extends Component {
   state = {
@@ -21,12 +20,14 @@ class Orders extends Component {
       show: false,
       order: {},
     },
+    Couriers: [],
   };
 
   getData = async () => {
     const data = await GetOrders();
-    toast.info(data);
-    this.setState({ data });
+    const Couriers = await GetCouriers();
+
+    this.setState({ data, Couriers });
   };
 
   componentWillMount() {
@@ -122,6 +123,7 @@ class Orders extends Component {
               showModal={this.state.modal.show}
               handleModalClose={this.handlePopUpModalClose}
               data={this.state.modal.order}
+              couriers={this.state.Couriers}
             />
           </div>
         </div>
