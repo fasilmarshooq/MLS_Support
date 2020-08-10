@@ -11,12 +11,13 @@ class Form extends Component {
   state = {
     data: {},
     errors: {},
+    formChanged: false,
   };
   focus() {
     this.myRef.current && this.myRef.current.focus();
   }
   componentDidUpdate() {
-    this.focus();
+    !this.state.formChanged && this.focus();
   }
 
   validate = () => {
@@ -54,7 +55,8 @@ class Form extends Component {
     else delete errors[currentTarget.name];
     const data = { ...this.state.data };
     data[currentTarget.name] = currentTarget.value;
-    this.setState({ data, errors });
+    const formChanged = true;
+    this.setState({ data, errors, formChanged });
   };
   renderButton = (label) => {
     return (
