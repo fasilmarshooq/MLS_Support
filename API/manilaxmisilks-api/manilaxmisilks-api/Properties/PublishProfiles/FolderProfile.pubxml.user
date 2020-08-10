@@ -6,7 +6,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>D:\Odessa\Personelprojects\ManiLaxmiSilks\API\manilaxmisilks-api\devtools-api\bin\Release\Publish</_PublishTargetUrl>
+    <_PublishTargetUrl>D:\Odessa\Personelprojects\ManiLaxmiSilks\API\manilaxmisilks-api\manilaxmisilks-api\bin\Release\Publish</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Antlr3.Runtime.dll">
@@ -38,6 +38,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="bin/K4os.Hash.xxHash.dll">
       <publishTime>07/03/2019 20:39:02</publishTime>
+    </File>
+    <File Include="bin/manilaxmisilks-api.dll">
+      <publishTime>08/10/2020 01:52:30</publishTime>
+    </File>
+    <File Include="bin/manilaxmisilks-api.pdb">
+      <publishTime>08/10/2020 01:52:30</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>05/25/2018 02:08:22</publishTime>
@@ -253,7 +259,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/05/2020 01:03:08</publishTime>
     </File>
     <File Include="Global.asax">
-      <publishTime>07/05/2020 01:03:08</publishTime>
+      <publishTime>08/07/2020 21:20:17</publishTime>
     </File>
     <File Include="Index.html">
       <publishTime>08/05/2020 01:22:54</publishTime>
@@ -262,7 +268,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/10/2020 01:37:37</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/05/2020 00:35:23</publishTime>
+      <publishTime>08/10/2020 01:51:25</publishTime>
     </File>
   </ItemGroup>
 </Project>

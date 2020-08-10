@@ -23,15 +23,19 @@ class Orders extends Component {
     Couriers: [],
   };
 
-  getData = async () => {
-    const data = await GetOrders();
+  getCouriers = async () => {
     const Couriers = await GetCouriers();
-
-    this.setState({ data, Couriers });
+    this.setState({ Couriers });
   };
 
-  componentWillMount() {
+  getData = async () => {
+    const data = await GetOrders();
+    this.setState({ data });
+  };
+
+  componentDidMount() {
     this.getData();
+    this.getCouriers();
   }
   handleSort = (sortColumn) => {
     this.setState({ sortColumn });

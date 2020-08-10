@@ -7,7 +7,7 @@ const Input = ({ name, label, type, value, onChange, error, autoFocus }) => {
         {label}
       </label>
       <input
-        value={value}
+        value={value || ""}
         onChange={onChange}
         name={name}
         id={name}

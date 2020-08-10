@@ -11,8 +11,8 @@ class OrdersModal extends Component {
         <PopUpModal
           show={showModal}
           onHide={handleModalClose}
-          modalHeader="Order"
-          modalBody={
+          header="Order"
+          body={
             <OrdersForm
               HandleClose={handleModalClose}
               data={data}

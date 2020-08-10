@@ -12,14 +12,14 @@ const PopUpModal = (props) => {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          {props.modalHeader}
+          {props.header}
         </Modal.Title>
       </Modal.Header>
-      <Modal.Body>{props.modalBody}</Modal.Body>
-      {props.modalFooterButtonLabel && (
+      <Modal.Body>{props.body}</Modal.Body>
+      {props.footerButtonLabel && (
         <Modal.Footer>
-          <Button onClick={props.handleModalFooterButtonClick}>
-            {props.modalFooterButtonLabel}
+          <Button onClick={props.handlefooterButtonClick}>
+            {props.footerButtonLabel}
           </Button>
         </Modal.Footer>
       )}
