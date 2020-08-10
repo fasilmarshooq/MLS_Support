@@ -12,8 +12,8 @@ class OrderDetailModal extends Component {
         <PopUpModal
           show={showModal}
           onHide={handleModalClose}
-          modalHeader="Order & Tracking"
-          modalBody={<OrderDetailModalBody data={data} />}
+          header="Order & Tracking"
+          body={<OrderDetailModalBody data={data} />}
         />
       </React.Fragment>
     );
