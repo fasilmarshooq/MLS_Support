@@ -4,10 +4,21 @@ import Input from "./Input";
 import InputDropDown from "./InputDropDown";
 
 class Form extends Component {
+  constructor(props) {
+    super(props);
+    this.myRef = React.createRef();
+  }
   state = {
     data: {},
     errors: {},
   };
+  focus() {
+    this.myRef.current && this.myRef.current.focus();
+  }
+  componentDidUpdate() {
+    this.focus();
+  }
+
   validate = () => {
     const options = {
       abortEarly: false,
@@ -52,10 +63,11 @@ class Form extends Component {
       </button>
     );
   };
-  renderInput = (name, label, type = "text") => {
+  renderInput = (name, label, autoFocus, type = "text") => {
     const { data, errors } = this.state;
     return (
       <Input
+        autoFocus={autoFocus && this.myRef}
         value={data[name]}
         type={type}
         label={label}

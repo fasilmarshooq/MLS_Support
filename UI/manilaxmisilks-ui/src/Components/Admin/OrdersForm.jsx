@@ -20,6 +20,7 @@ class OrdersForm extends Form {
     this.updateCouriers();
     this.updateFormForEdit();
   }
+
   async updateCouriers() {
     const Couriers = await GetCouriers();
     this.setState({ Couriers });
@@ -64,7 +65,7 @@ class OrdersForm extends Form {
     return (
       <React.Fragment>
         <form onSubmit={this.handleSubmit}>
-          {this.renderInput("OrderNumber", "Order#")}
+          {this.renderInput("OrderNumber", "Order#", true)}
           {this.renderInputDropDown(this.state.Couriers, "Courier", "Courier")}
           {this.renderInput("TrackingNumber", "Tracking#")}
           {this.renderButton("Submit")}
