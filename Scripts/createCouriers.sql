@@ -34,4 +34,16 @@ INSERT INTO Couriers(Courier, CourierUrl)
     SELECT 'GMS','http://www.gmsworldwide.com/tracking.php'
     FROM dual WHERE NOT EXISTS (SELECT * FROM Couriers WHERE Courier = 'GMS' );
 
+INSERT INTO Couriers(Courier, CourierUrl) 
+    SELECT 'Delhivery','https://www.delhivery.com/'
+    FROM dual WHERE NOT EXISTS (SELECT * FROM Couriers WHERE Courier = 'Delhivery' );
+
+INSERT INTO Couriers(Courier, CourierUrl) 
+    SELECT 'fedex','http://www.fedex.com/in/domestic/track/'
+    FROM dual WHERE NOT EXISTS (SELECT * FROM Couriers WHERE Courier = 'fedex' );
+
+INSERT INTO Couriers(Courier, CourierUrl) 
+    SELECT 'ekart','https://www.ekartlogistics.com/'
+    FROM dual WHERE NOT EXISTS (SELECT * FROM Couriers WHERE Courier = 'ekart' );
+
 	

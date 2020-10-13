@@ -3,6 +3,7 @@ import Form from "../Common/Form";
 import Joi from "joi-browser";
 import { PostOrder } from "../../Services/ordersService";
 import { toast } from "react-toastify";
+import Buffer from "../Common/Buffer";
 
 class OrdersForm extends Form {
   state = {
@@ -15,6 +16,7 @@ class OrdersForm extends Form {
     errors: {},
     currentId: 0,
     bingo: [],
+    submitInprogress: false,
   };
 
   componentDidMount() {
@@ -36,7 +38,9 @@ class OrdersForm extends Form {
 
   doSubmit = async () => {
     try {
+      this.setState({ submitInprogress: true });
       const data = this.state.data;
+
       await PostOrder(
         this.state.currentId,
         data.OrderNumber,
@@ -48,6 +52,7 @@ class OrdersForm extends Form {
     } catch (ex) {
       if (ex.response && ex.response.status === 400) {
         toast(ex.response.data);
+        this.setState({ submitInprogress: false });
       }
     }
   };
@@ -61,6 +66,7 @@ class OrdersForm extends Form {
   render() {
     return (
       <React.Fragment>
+        <Buffer isActive={this.state.submitInprogress} isFromModal={true} />
         <form onSubmit={this.handleSubmit}>
           {this.renderInput("OrderNumber", "Order#", true)}
           {this.renderInputDropDown(this.state.Couriers, "Courier", "Courier")}

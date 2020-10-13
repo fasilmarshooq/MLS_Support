@@ -5,15 +5,15 @@ import Pagination from "../Common/Pagination";
 import OrdersTable from "./OrdersTable";
 import _ from "lodash";
 import OrdersModal from "./OrdersModal";
-import { validateAuth } from "../../Services/adminLoginService";
-import { Redirect } from "react-router-dom";
+import AdminNavBar from "./AdminNavBar";
+import { trackPromise } from "react-promise-tracker";
 
 class Orders extends Component {
   state = {
     data: [],
     ResponseLoaded: false,
-    sortColumn: { path: "Id", order: "asc" },
-    pageSize: 15,
+    sortColumn: { path: "Id", order: "desc" },
+    pageSize: 200,
     currentPage: 1,
     searchText: "",
     modal: {
@@ -34,7 +34,7 @@ class Orders extends Component {
   };
 
   componentDidMount() {
-    this.getData();
+    trackPromise(this.getData());
     this.getCouriers();
   }
   handleSort = (sortColumn) => {
@@ -52,7 +52,7 @@ class Orders extends Component {
     const modal = this.state.modal;
     modal.show = false;
     delete modal.order;
-    this.getData();
+    trackPromise(this.getData());
     this.setState({ modal });
   };
   handleEdit = (Order) => {
@@ -82,14 +82,13 @@ class Orders extends Component {
     return { totalCount: filtered.length, data: paginatedMovies };
   };
   render() {
-    const auth = validateAuth();
-    if (!auth) return <Redirect to="/admin" />;
     const { totalCount, data } = this.getTableData();
     return (
       <React.Fragment>
+        <AdminNavBar />
         <div>
           <div className="container ">
-            <div className="card border-secondary mb-5 card-style">
+            <div className="card border-secondary mt-5 mb-5 card-style">
               <div className="card-header  card-header-sticky">
                 <div className="input-group ">
                   <input

@@ -1,28 +1,73 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
+import {  NavLink } from "react-router-dom";
 const AdminNavBar = () => {
   return (
     <React.Fragment>
-      <nav
-        className="navbar navbar-expand-lg navbar-light mb-2"
-        style={{ backgroundColor: "#87d3f8" }}
-      >
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <div className="navbar-nav">
-            <Link className="navbar-brand" to="/Admin">
-              Mani Laxmi Silks
-            </Link>
+      <header className="header1">
+        <div className="container-menu-header">
+          <div className="wrap_header">
+            <NavLink to="./" className="logo">
+              <img
+                src="/assets/MainCatalog/images/icons/MLSlogo.png"
+                alt="IMG-LOGO"
+              />
+            </NavLink>
 
-            <Link className="nav-item nav-link ml-2" to="/Admin/Orders">
-              <i className="fa fa-sticky-note-o" aria-hidden="true"></i> Orders
-            </Link>
-            <Link className="nav-item nav-link ml-2" to="/Admin/AdminHelp">
-              <i className="fa fa-sticky-note-o" aria-hidden="true"></i> Help
-            </Link>
+            <div className="header-icons">
+              <NavLink to="/Orders" activeStyle={{ fontWeight: "Bold" }}>
+                Orders
+              </NavLink>
+
+              <span className="linedivide1"></span>
+
+              <NavLink to="/ProductEntry" activeStyle={{ fontWeight: "Bold" }}>
+                Products
+              </NavLink>
+              <span className="linedivide1"></span>
+
+              <NavLink to="/AccessToken" activeStyle={{ fontWeight: "Bold" }}>
+                Access Token
+              </NavLink>
+              <span className="linedivide1"></span>
+
+              <a href="#" className="header-wrapicon1 dis-block">
+                <p>Couriers</p>
+              </a>
+            </div>
           </div>
         </div>
-      </nav>
+        <div className="wrap_header_mobile">
+          <NavLink to="./" className="logo-mobile">
+            <img
+              src="/assets/MainCatalog/images/icons/MLSlogo.png"
+              alt="IMG-LOGO"
+            />
+          </NavLink>
+          <div className="btn-show-menu">
+            <div className="header-icons-mobile">
+              <NavLink to="/Orders" activeStyle={{ fontWeight: "Bold" }}>
+                Orders
+              </NavLink>
+
+              <span className="linedivide1"></span>
+
+              <NavLink to="/ProductEntry" activeStyle={{ fontWeight: "Bold" }}>
+                Products
+              </NavLink>
+              <span className="linedivide1"></span>
+
+              <NavLink to="/AccessToken" activeStyle={{ fontWeight: "Bold" }}>
+                Access Token
+              </NavLink>
+              <span className="linedivide1"></span>
+
+              <a href="#" className="header-wrapicon1 dis-block">
+                <p>Couriers</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
     </React.Fragment>
   );
 };

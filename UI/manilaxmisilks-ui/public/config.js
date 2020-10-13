@@ -1,1 +1,1 @@
-var apiEndPoint = "http://api.manilaxmisilks.in/";
+var apiEndPoint = "http://localhost:65412/";

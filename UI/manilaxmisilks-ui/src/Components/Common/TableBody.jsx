@@ -4,6 +4,7 @@ import _ from "lodash";
 class TableBody extends Component {
   renderCell = (item, column) => {
     if (column.content) return column.content(item);
+  if(column.img) return <div className="image_container"><img className="image_container " src={item.MainImageUrl}/></div>
     return _.get(item, column.path);
   };
   render() {

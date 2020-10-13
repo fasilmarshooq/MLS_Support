@@ -6,10 +6,20 @@ import { BrowserRouter } from "react-router-dom";
 import * as serviceWorker from "./serviceWorker";
 import "bootstrap/dist/css/bootstrap.css";
 import "font-awesome/css/font-awesome.css";
+import { usePromiseTracker } from "react-promise-tracker";
+import Buffer from "./Components/Common/Buffer";
+
+const LoadingIndicator = () => {
+  const { promiseInProgress } = usePromiseTracker();
+  return <Buffer isActive={promiseInProgress} />;
+};
 
 ReactDOM.render(
   <BrowserRouter>
-    <App />
+    <div>
+      <App />
+      <LoadingIndicator />
+    </div>
   </BrowserRouter>,
   document.getElementById("root")
 );

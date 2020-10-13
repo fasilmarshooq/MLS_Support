@@ -2,7 +2,7 @@ import React from "react";
 
 const InputDropDown = ({ enumValues, label, onChange, value, name, error }) => {
   return (
-    <div className="for-group">
+    <div className="form-group">
       <label className="m-1" htmlFor={name}>
         {label}
       </label>
@@ -16,8 +16,8 @@ const InputDropDown = ({ enumValues, label, onChange, value, name, error }) => {
       >
         <option value="" />
         {enumValues.map((e) => (
-          <option key={e[name]} value={e[name]}>
-            {e[name]}
+          <option key={e[name] || e} value={e[name] || e}>
+            {e[name] || e}
           </option>
         ))}
       </select>

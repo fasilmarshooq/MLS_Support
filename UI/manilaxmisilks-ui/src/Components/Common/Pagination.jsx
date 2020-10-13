@@ -9,16 +9,20 @@ const Pagination = ({ itemCount, pageSize, currentPage, onPageChange }) => {
   if (pages.length === 1) return null;
 
   return (
-    <nav aria-label="Page navigation example">
-      <ul className="pagination pagination-sm justify-content-center">
+    <nav>
+      <ul className="pagination flex-m flex-w p-t-26 m-1">
         {pages.map((x) => (
           <li
             key={x}
-            className={x === currentPage ? "page-item active" : "page-item"}
+            className={
+              x === currentPage
+                ? "item-pagination flex-c-m trans-0-4 active-pagination"
+                : "item-pagination flex-c-m trans-0-4"
+            }
+            style={{ cursor: "pointer" }}
+            onClick={() => onPageChange(x)}
           >
-            <button onClick={() => onPageChange(x)} className="page-link">
-              {x}
-            </button>
+            {x}
           </li>
         ))}
       </ul>

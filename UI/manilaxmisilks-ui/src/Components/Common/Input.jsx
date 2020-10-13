@@ -1,8 +1,9 @@
 import React from "react";
+import "bootstrap/dist/css/bootstrap.css";
 
 const Input = ({ name, label, type, value, onChange, error, autoFocus }) => {
   return (
-    <div className="for-group">
+    <div className="form-group">
       <label className="m-1" htmlFor={name}>
         {label}
       </label>
